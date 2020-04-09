@@ -14,7 +14,7 @@ function App() {
       </header>
       <section className="App-section">
         <section>
-        <label>Number of corn
+        <label>Number of bags of corn
           <input
             type="number"
             min="0"
@@ -29,7 +29,7 @@ function App() {
         </label>
         </section>
         <section className="App-section">
-        Cost of trip with {numberOfCorn} corn: <span>{displayCost(calculateCost(numberOfCorn))}</span>
+        Cost of trip with {numberOfCorn} bags of corn: <span>{displayCost(calculateCost(numberOfCorn))}</span>
         </section>
       </section>
     </div>
