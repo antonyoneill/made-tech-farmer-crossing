@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/made-tech-farmer-crossing/static/css/main.eb2fd75c.chunk.css",
-    "main.js": "/made-tech-farmer-crossing/static/js/main.8b193319.chunk.js",
-    "main.js.map": "/made-tech-farmer-crossing/static/js/main.8b193319.chunk.js.map",
+    "main.js": "/made-tech-farmer-crossing/static/js/main.71d91a0a.chunk.js",
+    "main.js.map": "/made-tech-farmer-crossing/static/js/main.71d91a0a.chunk.js.map",
     "runtime-main.js": "/made-tech-farmer-crossing/static/js/runtime-main.5cee864c.js",
     "runtime-main.js.map": "/made-tech-farmer-crossing/static/js/runtime-main.5cee864c.js.map",
     "static/js/2.d0dc2dcd.chunk.js": "/made-tech-farmer-crossing/static/js/2.d0dc2dcd.chunk.js",
     "static/js/2.d0dc2dcd.chunk.js.map": "/made-tech-farmer-crossing/static/js/2.d0dc2dcd.chunk.js.map",
     "index.html": "/made-tech-farmer-crossing/index.html",
-    "precache-manifest.ca76f2e0ce0e23b2b239d2c82109592f.js": "/made-tech-farmer-crossing/precache-manifest.ca76f2e0ce0e23b2b239d2c82109592f.js",
+    "precache-manifest.5f4e60003b0d5126f0e90e96bbe716fb.js": "/made-tech-farmer-crossing/precache-manifest.5f4e60003b0d5126f0e90e96bbe716fb.js",
     "service-worker.js": "/made-tech-farmer-crossing/service-worker.js",
     "static/css/main.eb2fd75c.chunk.css.map": "/made-tech-farmer-crossing/static/css/main.eb2fd75c.chunk.css.map",
     "static/js/2.d0dc2dcd.chunk.js.LICENSE.txt": "/made-tech-farmer-crossing/static/js/2.d0dc2dcd.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5cee864c.js",
     "static/js/2.d0dc2dcd.chunk.js",
     "static/css/main.eb2fd75c.chunk.css",
-    "static/js/main.8b193319.chunk.js"
+    "static/js/main.71d91a0a.chunk.js"
   ]
 }

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "634a5a26ef945f92c4bd9681fc26af57",
+    "revision": "72a56c7b07ae5dea7c2c672de63d72d5",
     "url": "/made-tech-farmer-crossing/index.html"
   },
   {
-    "revision": "38935ce76f55c4812320",
+    "revision": "b276644d5323fe3ffcc5",
     "url": "/made-tech-farmer-crossing/static/css/main.eb2fd75c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/made-tech-farmer-crossing/static/js/2.d0dc2dcd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "38935ce76f55c4812320",
-    "url": "/made-tech-farmer-crossing/static/js/main.8b193319.chunk.js"
+    "revision": "b276644d5323fe3ffcc5",
+    "url": "/made-tech-farmer-crossing/static/js/main.71d91a0a.chunk.js"
   },
   {
     "revision": "9f4167d50f9ded6033fd",
