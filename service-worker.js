@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/made-tech-farmer-crossing/precache-manifest.b48343f2860fb965eebedce59acccedd.js"
+  "/made-tech-farmer-crossing/precache-manifest.ca76f2e0ce0e23b2b239d2c82109592f.js"
 );
 
 self.addEventListener('message', (event) => {
