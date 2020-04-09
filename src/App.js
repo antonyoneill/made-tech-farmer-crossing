@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import calculateCost from './utils/calculateCost'
+import displayCost from './utils/displayCost'
 import logo from './logo.svg';
 import './App.css';
 
@@ -27,7 +28,7 @@ function App() {
         </label>
         </section>
         <section className="App-section">
-        Cost of trip with {numberOfCorn} corn: <span>{calculateCost(numberOfCorn)}p</span>
+        Cost of trip with {numberOfCorn} corn: <span>{displayCost(calculateCost(numberOfCorn))}</span>
         </section>
       </section>
     </div>
