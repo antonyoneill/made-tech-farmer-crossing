@@ -35,3 +35,16 @@ test('when there 3 bags of corn, and two geese the trip is not possible', () => 
   const impossibleMessage = context.getByText("The trip is not possible")
   expect(impossibleMessage).toBeInTheDocument();
 })
+
+test('when there 3 geese, and two foxes the trip is not possible', () => {
+  const context = render(<App />);
+
+  fireEvent.change(context.getByLabelText("Number of geese"), {target:{value: 3}})
+
+  fireEvent.change(context.getByLabelText("Number of foxes"), {target:{value: 2}})
+
+  fireEvent.click(context.getByText("Calculate"))
+
+  const impossibleMessage = context.getByText("The trip is not possible")
+  expect(impossibleMessage).toBeInTheDocument();
+})

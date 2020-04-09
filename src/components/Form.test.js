@@ -1,37 +1,50 @@
-import React from 'react'
-import Form from "./Form"
-import { render, fireEvent } from '@testing-library/react';
+import React from "react";
+import Form from "./Form";
+import { render, fireEvent } from "@testing-library/react";
 
-describe('Form', () => {
-    it('accepts valid number of bags of corn from the user and passes the values through onSubmit', () => {
+describe("Form", () => {
+  it("accepts valid number of bags of corn from the user and passes the values through onSubmit", () => {
+    const onSubmitSpy = jest.fn();
+    const context = render(<Form onSubmit={onSubmitSpy} />);
 
-        const onSubmitSpy = jest.fn()
-        const context = render(<Form onSubmit={onSubmitSpy}/>);
-    
+    const input = context.getByLabelText("Number of bags of corn");
 
-        const input = context.getByLabelText("Number of bags of corn")
+    fireEvent.change(input, { target: { value: 1 } });
 
-        fireEvent.change(input, {target:{value: 1}})
+    const button = context.getByText("Calculate");
 
-        const button = context.getByText("Calculate")
+    fireEvent.click(button);
 
-        fireEvent.click(button)
+    expect(onSubmitSpy).toHaveBeenCalledWith(1, 0, 0);
+  });
 
-        expect(onSubmitSpy).toHaveBeenCalledWith(1, 0)
-    })
+  it("accepts valid number of geese from the user and passes the values through onSubmit", () => {
+    const onSubmitSpy = jest.fn();
+    const context = render(<Form onSubmit={onSubmitSpy} />);
 
-    it('accepts valid number of geese from the user and passes the values through onSubmit', () => {
-        const onSubmitSpy = jest.fn()
-        const context = render(<Form onSubmit={onSubmitSpy}/>);
-    
-        const input = context.getByLabelText("Number of geese")
+    const input = context.getByLabelText("Number of geese");
 
-        fireEvent.change(input, {target:{value: 3}})
+    fireEvent.change(input, { target: { value: 3 } });
 
-        const button = context.getByText("Calculate")
+    const button = context.getByText("Calculate");
 
-        fireEvent.click(button)
+    fireEvent.click(button);
 
-        expect(onSubmitSpy).toHaveBeenCalledWith(0, 3)
-    })
-})
+    expect(onSubmitSpy).toHaveBeenCalledWith(0, 3, 0);
+  });
+
+  it("accepts valid number of foxes from the user and passes the values through onSubmit", () => {
+    const onSubmitSpy = jest.fn();
+    const context = render(<Form onSubmit={onSubmitSpy} />);
+
+    const input = context.getByLabelText("Number of foxes");
+
+    fireEvent.change(input, { target: { value: 5 } });
+
+    const button = context.getByText("Calculate");
+
+    fireEvent.click(button);
+
+    expect(onSubmitSpy).toHaveBeenCalledWith(0, 0, 5);
+  });
+});

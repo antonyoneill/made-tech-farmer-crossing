@@ -10,21 +10,23 @@ import tripValidator from "./utils/tripValidator";
 function App() {
   const [numberOfCorn, setNumberOfCorn] = useState(0);
   const [numberOfGeese, setNumberOfGeese] = useState(0);
+  const [numberOfFoxes, setNumberOfFoxes] = useState(0);
 
-  const tripCount = calculateTripCount(numberOfCorn, numberOfGeese);
+  const tripCount = calculateTripCount(numberOfCorn, numberOfGeese, numberOfFoxes);
 
   return (
     <div className="App">
       <header className="App-header">🌽 Corn Trip Calculator</header>
       <section className="App-section">
         <Form
-          onSubmit={(newCornNumber, newGeeseNumber) => {
+          onSubmit={(newCornNumber, newGeeseNumber, newFoxesNumber) => {
             setNumberOfCorn(newCornNumber);
             setNumberOfGeese(newGeeseNumber);
+            setNumberOfFoxes(newFoxesNumber);
           }}
         />
         <section className="App-section">
-          {tripValidator(numberOfCorn, numberOfGeese) ? (
+          {tripValidator(numberOfCorn, numberOfGeese, numberOfFoxes) ? (
             <React.Fragment>
               <p>The trip is possible.</p>
               <p>

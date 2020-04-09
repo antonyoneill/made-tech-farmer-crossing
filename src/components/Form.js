@@ -4,6 +4,7 @@ import "./Form.css";
 export default function Form({ onSubmit }) {
   const [numberOfCorn, setNumberOfCorn] = useState(0);
   const [numberOfGeese, setNumberOfGeese] = useState(0);
+  const [numberOfFoxes, setNumberOfFoxes] = useState(0);
 
   return (
     <form
@@ -11,7 +12,7 @@ export default function Form({ onSubmit }) {
       onSubmit={(event) => {
         event.preventDefault();
 
-        onSubmit(parseInt(numberOfCorn, 10), parseInt(numberOfGeese, 10));
+        onSubmit(parseInt(numberOfCorn, 10), parseInt(numberOfGeese, 10), parseInt(numberOfFoxes, 10));
       }}
     >
       <div>
@@ -39,6 +40,20 @@ export default function Form({ onSubmit }) {
               setNumberOfGeese(event.currentTarget.value);
             }}
             value={numberOfGeese}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Number of foxes
+          <input
+            type="number"
+            min="0"
+            required={true}
+            onChange={(event) => {
+              setNumberOfFoxes(event.currentTarget.value);
+            }}
+            value={numberOfFoxes}
           />
         </label>
       </div>

@@ -1,28 +1,170 @@
-import tripValidator from './tripValidator';
+import tripValidator from "./tripValidator";
 
 describe("tripValidator", () => {
-  it("is valid if any number of corn but no geese", () => {
-    expect(tripValidator(10, 0)).toEqual(true);
+  describe("singular items", () => {
+    const testData = [
+      {
+        corn: 1,
+        goose: 0,
+        fox: 0,
+        expect: true,
+      },
+      {
+        corn: 0,
+        goose: 1,
+        fox: 0,
+        expect: true,
+      },
+      {
+        corn: 0,
+        goose: 0,
+        fox: 1,
+        expect: true,
+      },
+    ];
+    executeTest(testData);
   });
-  it("is valid if no corn but any number of geese", () => {
-    expect(tripValidator(0, 10)).toEqual(true);
+
+  describe("with corn and foxes", () => {
+    const testData = [
+      {
+        corn: 1,
+        goose: 0,
+        fox: 1,
+        expect: true,
+      },
+      {
+        corn: 10,
+        goose: 0,
+        fox: 1,
+        expect: true,
+      },
+      {
+        corn: 1,
+        goose: 0,
+        fox: 10,
+        expect: true,
+      },
+      {
+        corn: 10,
+        goose: 0,
+        fox: 10,
+        expect: true,
+      },
+    ];
+    executeTest(testData);
   });
-  it("is valid if one corn and two geese", () => {
-    expect(tripValidator(1, 2)).toEqual(true);
+  describe("with corn and geese", () => {
+    const testData = [
+      {
+        corn: 1,
+        goose: 1,
+        fox: 0,
+        expect: true,
+      },
+      {
+        corn: 1,
+        goose: 2,
+        fox: 0,
+        expect: true,
+      },
+      {
+        corn: 2,
+        goose: 1,
+        fox: 0,
+        expect: true,
+      },
+      {
+        corn: 10,
+        goose: 1,
+        fox: 0,
+        expect: false,
+      },
+      {
+        corn: 1,
+        goose: 10,
+        fox: 0,
+        expect: false,
+      },
+    ];
+    executeTest(testData);
   });
-  it("is valid if two corn and one goose", () => {
-    expect(tripValidator(2, 1)).toEqual(true);
+  describe("with geese and foxes", () => {
+    const testData = [
+      {
+        corn: 0,
+        goose: 1,
+        fox: 1,
+        expect: true,
+      },
+      {
+        corn: 0,
+        goose: 1,
+        fox: 2,
+        expect: true,
+      },
+      {
+        corn: 0,
+        goose: 2,
+        fox: 1,
+        expect: true,
+      },
+      {
+        corn: 0,
+        goose: 1,
+        fox: 10,
+        expect: false,
+      },
+      {
+        corn: 0,
+        goose: 10,
+        fox: 1,
+        expect: false,
+      },
+    ];
+    executeTest(testData);
   });
-  it("is valid if one corn and one goose", () => {
-    expect(tripValidator(1, 1)).toEqual(true);
+  describe("with geese, foxes, and corn", () => {
+    const testData = [
+      {
+        corn: 1,
+        goose: 1,
+        fox: 1,
+        expect: true,
+      },
+      { corn: 2, goose: 1, fox: 1, expect: false },
+      { corn: 1, goose: 2, fox: 1, expect: false },
+      { corn: 1, goose: 1, fox: 2, expect: false },
+      {
+        corn: 10,
+        goose: 1,
+        fox: 1,
+        expect: false,
+      },
+      {
+        corn: 1,
+        goose: 10,
+        fox: 1,
+        expect: false,
+      },
+      {
+        corn: 1,
+        goose: 1,
+        fox: 10,
+        expect: false,
+      },
+    ];
+    executeTest(testData);
   });
-  it("is valid if no corn and no geese", () => {
-    expect(tripValidator(0, 0)).toEqual(true);
-  });
-  it("is invalid if more than 2 corn and 1 goose", () => {
-    expect(tripValidator(3, 1)).toEqual(false);
-  });
-  it("is invalid if 1 corn and more than 2 geese", () => {
-    expect(tripValidator(1, 3)).toEqual(false);
-  });
+  function executeTest(testData) {
+    testData.forEach((data) => {
+      it(`with ${data.corn} corn, ${data.goose} goose, ${data.fox} fox is ${
+        data.expect ? "" : "not"
+      } valid`, () => {
+        expect(tripValidator(data.corn, data.goose, data.fox)).toEqual(
+          data.expect
+        );
+      });
+    });
+  }
 });
