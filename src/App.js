@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Form from './components/Form'
 import calculateCost from './utils/calculateCost'
 import displayCost from './utils/displayCost'
 import logo from './logo.svg';
@@ -13,21 +14,9 @@ function App() {
         🌽 Corn Trip Calculator
       </header>
       <section className="App-section">
-        <section>
-        <label>Number of bags of corn
-          <input
-            type="number"
-            min="0"
-            onChange={(event) => {
-              const newCountOfCorn = parseInt(event.currentTarget.value,10)
-              if (!isNaN(newCountOfCorn)) {
-                setNumberOfCorn(newCountOfCorn)
-              }
-            }} 
-            value={numberOfCorn}
-          />
-        </label>
-        </section>
+        <Form onSubmit={(newCornNumber) => {
+          setNumberOfCorn(newCornNumber)
+        }}/>
         <section className="App-section">
         Cost of trip with {numberOfCorn} bags of corn: <span>{displayCost(calculateCost(numberOfCorn))}</span>
         </section>
