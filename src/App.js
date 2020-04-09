@@ -17,6 +17,7 @@ function App() {
         <label>Number of corn
           <input
             type="number"
+            min="0"
             onChange={(event) => {
               const newCountOfCorn = parseInt(event.currentTarget.value,10)
               if (!isNaN(newCountOfCorn)) {
